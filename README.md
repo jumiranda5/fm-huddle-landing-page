@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/huddle-landing-page-html-and-css-TFUtG-yjw8)
 - Live Site URL: [Github Pages - fm-huddle-landing-page](https://jumiranda5.github.io/fm-huddle-landing-page/)
 
 ## Author
