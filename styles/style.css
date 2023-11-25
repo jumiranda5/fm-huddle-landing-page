@@ -135,7 +135,7 @@ header {
   margin: 0 auto;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 64em) {
 
   body {
     height: 100vh;
@@ -171,7 +171,7 @@ header {
   width: 7.5rem;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 64em) {
   .logo {
     width: 13.125rem;
   }   
@@ -221,7 +221,7 @@ header {
   color: var(--primary-text-color);
 } 
 
-@media (min-width: 960px) {
+@media (min-width: 64em) {
 
   main .wrapper {
     margin-top: 2rem;
@@ -308,7 +308,7 @@ footer .wrapper {
   color: #ffbbfc;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 64em) {
 
   footer .wrapper {
     height: 100%;
