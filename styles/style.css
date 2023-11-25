@@ -72,55 +72,266 @@ textarea, select {
 =============================================== */
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Regular.ttf);
-    font-weight: 400;
+  font-family: Poppins;
+  src: url(../fonts/Poppins-Regular.ttf);
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-SemiBold.ttf);
-    font-weight: 600;
+  font-family: Poppins;
+  src: url(../fonts/Poppins-SemiBold.ttf);
+  font-weight: 600;
 }
 
 @font-face {
-    font-family: Open-sans;
-    src: url(../fonts/OpenSans-Regular.ttf);
-    font-weight: 400;
+  font-family: Open-sans;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  font-weight: 400;
 }
 
 :root {
-    /* Color variables*/
-    --violet: hsl(257, 40%, 49%);
-    --soft-magenta: hsl(300, 69%, 71%);
-    --primary-text: rgba(255, 255, 255, 1);
-    --secondary-text: rgba(255, 255, 255, 0.87);
+  /* Color variables*/
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+  --primary-text-color: rgba(255, 255, 255, 1);
+  --secondary-text-color: rgba(255, 255, 255, 0.87);
 
-    /* Fonts variables */
-    --heading-font: Poppins, sans-serif;
-    --paragraph-font: Open-sans, sans-serif;
+  /* Fonts variables */
+  --heading-font: Poppins, sans-serif;
+  --heading-size: 1.5rem;
+  --paragraph-font: Open-sans, sans-serif;
+  --paragraph-size: 1rem;
 }
 
 body {
-    min-height: 100vh;
+  background-image: url(../images/bg-mobile.svg);
+  background-color: var(--violet);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  font-family: var(--paragraph-font);
+  color: var(--primary-text-color);
 }
 
+body,
+header,
+main,
+footer {
+  display: flex;
+  flex-direction: column;
+}
 
+header, main, footer { justify-content: center; }
 
+header {
+  height: 6rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (min-width: 960px) {
+
+  body {
+    height: 100vh;
+    background-image: url(../images/bg-desktop.svg);
+    background-position: 0%;
+    background-size: auto 100%;
+  }
+
+  header {
+    height: 10rem;
+  }
+      
+  main {
+    flex-grow: 1;
+  }
+      
+  footer {
+    height: 6.75rem;
+  }
+
+  .wrapper {
+    width: 90%;
+    max-width: 81rem;
+  }
+
+}
 
 /* ============================================
     HEADER
 =============================================== */
 
+.logo {
+  width: 7.5rem;
+}
 
+@media (min-width: 960px) {
+  .logo {
+    width: 13.125rem;
+  }   
+}
 
 /* ============================================
     MAIN
 =============================================== */
 
+.illustration {
+  margin-top: 1.5rem;
+}
 
+.main-content { 
+  text-align: center; 
+}
+
+.main-content h1 {
+  margin-top: 3.75rem;
+
+  font-family: var(--heading-font);
+  font-size: var(--heading-size);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.main-content p {
+  margin: 1rem 0 1.5rem;
+  color: var(--secondary-text-color);
+}
+
+.main-content a {
+  display: inline-block;
+  width: 12.5rem;
+  line-height: 2.5rem;
+  border-radius: 1.25rem;
+  background-color: var(--primary-text-color);
+  box-shadow: .2rem .2rem .3rem rgba(0, 0, 0, 0.2);
+
+  font-size: .875rem;
+  color: var(--violet);
+  text-decoration: none;
+}
+
+.main-content a:hover {
+  background-color: var(--soft-magenta);
+  color: var(--primary-text-color);
+} 
+
+@media (min-width: 960px) {
+
+  main .wrapper {
+    margin-top: 2rem;
+  }
+
+  .illustration { 
+    width: 55%;
+    max-height: 100%;
+    margin-top: .5rem;
+  }
+
+  .main-content { 
+    width: 45%; 
+    padding: 0 1rem 0 3rem;
+    text-align: start;
+  }
+
+  .main-content h1 {
+    font-size: 2.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .main-content p {
+    margin: 1rem 0 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .main-content a {
+    line-height: 3.5rem;
+    border-radius: 1.75rem;
+
+    text-align: center;
+    font-size: 1.125rem;
+  }
+
+}
 
 /* ============================================
     FOOTER
 =============================================== */
 
+footer .wrapper {
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+  margin-top: 4rem;
+}
+
+.social-links a {
+  width: 1.75rem;
+  aspect-ratio: 1;
+  padding: .4em;
+  border-radius: 50%;
+  border: 1px solid var(--primary-text-color);
+
+  fill: var(--primary-text-color);
+}
+
+.social-links a:hover { 
+  fill: var(--soft-magenta); 
+  border: 1px solid var(--soft-magenta);
+}
+
+.social-links svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.attribution {
+  width: 100%;
+  margin: 2rem 0 1rem;
+  color: var(--secondary-text-color);
+  text-align: center;
+  font-size: .75rem;
+}
+
+.attribution a {
+  color: #ffbbfc;
+}
+
+@media (min-width: 960px) {
+
+  footer .wrapper {
+    height: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 .5rem;
+  }
+
+  .social-links {
+    margin-top: 0;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    width: 2.5rem;
+    aspect-ratio: 1;
+    padding: .6em;
+  }
+
+  .attribution {
+    width: auto;
+    margin: 0;
+  }
+
+}
